@@ -13,6 +13,9 @@
 		7ED29A39286AB797006DE09F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED29A37286AB797006DE09F /* Main.storyboard */; };
 		7ED29A3B286AB79C006DE09F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7ED29A3A286AB79C006DE09F /* Assets.xcassets */; };
 		7ED29A3E286AB79C006DE09F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7ED29A3C286AB79C006DE09F /* LaunchScreen.storyboard */; };
+		7ED29A682871E2B0006DE09F /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED29A672871E2B0006DE09F /* RealmService.swift */; };
+		7ED29A6A2871E2EB006DE09F /* CoordinateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED29A692871E2EB006DE09F /* CoordinateModel.swift */; };
+		7ED29A6C2872A900006DE09F /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED29A6B2872A8FF006DE09F /* MapsViewController.swift */; };
 		D713C39ED67D9BF81AADBE3C /* Pods_GBMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25BE9C4B7C3BB9C1D9B48E00 /* Pods_GBMaps.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +30,9 @@
 		7ED29A3A286AB79C006DE09F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7ED29A3D286AB79C006DE09F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7ED29A3F286AB79C006DE09F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ED29A672871E2B0006DE09F /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		7ED29A692871E2EB006DE09F /* CoordinateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateModel.swift; sourceTree = "<group>"; };
+		7ED29A6B2872A8FF006DE09F /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		EE59D730DECE547D5ACE85A0 /* Pods-GBMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBMaps.release.xcconfig"; path = "Target Support Files/Pods-GBMaps/Pods-GBMaps.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +72,9 @@
 				7ED29A31286AB797006DE09F /* AppDelegate.swift */,
 				7ED29A33286AB797006DE09F /* SceneDelegate.swift */,
 				7ED29A35286AB797006DE09F /* ViewController.swift */,
+				7ED29A6B2872A8FF006DE09F /* MapsViewController.swift */,
+				7ED29A672871E2B0006DE09F /* RealmService.swift */,
+				7ED29A692871E2EB006DE09F /* CoordinateModel.swift */,
 				7ED29A37286AB797006DE09F /* Main.storyboard */,
 				7ED29A3A286AB79C006DE09F /* Assets.xcassets */,
 				7ED29A3C286AB79C006DE09F /* LaunchScreen.storyboard */,
@@ -88,7 +97,6 @@
 				68955CDEEEBD7525BB77C506 /* Pods-GBMaps.debug.xcconfig */,
 				EE59D730DECE547D5ACE85A0 /* Pods-GBMaps.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +112,7 @@
 				7ED29A2B286AB797006DE09F /* Frameworks */,
 				7ED29A2C286AB797006DE09F /* Resources */,
 				D11ABB5E2467591682E38308 /* [CP] Copy Pods Resources */,
+				7E92221C8EA8BDA452A30E6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +192,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7E92221C8EA8BDA452A30E6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBMaps/Pods-GBMaps-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GBMaps/Pods-GBMaps-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GBMaps/Pods-GBMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D11ABB5E2467591682E38308 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,7 +235,10 @@
 			files = (
 				7ED29A36286AB797006DE09F /* ViewController.swift in Sources */,
 				7ED29A32286AB797006DE09F /* AppDelegate.swift in Sources */,
+				7ED29A6A2871E2EB006DE09F /* CoordinateModel.swift in Sources */,
+				7ED29A6C2872A900006DE09F /* MapsViewController.swift in Sources */,
 				7ED29A34286AB797006DE09F /* SceneDelegate.swift in Sources */,
+				7ED29A682871E2B0006DE09F /* RealmService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
