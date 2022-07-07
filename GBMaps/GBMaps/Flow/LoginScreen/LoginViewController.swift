@@ -13,7 +13,11 @@ class LoginViewController: UIViewController {
     var viewModel: LoginViewModel?
     
     @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.autocorrectionType = .no
+        }
+    }
     
     let realmService = RealmService()
     
