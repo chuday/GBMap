@@ -46,8 +46,10 @@ class ViewController: UIViewController {
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
-        locationManager?.requestAlwaysAuthorization()
         locationManager?.allowsBackgroundLocationUpdates = true
+        locationManager?.startMonitoringSignificantLocationChanges()
+        locationManager?.pausesLocationUpdatesAutomatically = false
+        locationManager?.requestAlwaysAuthorization()
     }
     
     private func configureMap() {
