@@ -7,6 +7,8 @@ target 'GBMaps' do
 
   # Pods for GBMaps
   pod 'GoogleMaps'
-    pod 'RealmSwift'
+  pod 'RealmSwift'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end

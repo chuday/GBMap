@@ -16,6 +16,9 @@ class MapViewController: UIViewController {
     var locationManager: CLLocationManager?
     let realmService = RealmService()
     
+    var locationManagers = LocationManagerService.instance
+
+    
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
     var markers: [GMSMarker]?
@@ -28,6 +31,7 @@ class MapViewController: UIViewController {
         
         self.configureLocationManager()
         self.configureMap()
+        self.configureLocationManagers()
     }
     
     private func configureMap() {
@@ -49,6 +53,24 @@ class MapViewController: UIViewController {
         self.locationManager?.startMonitoringSignificantLocationChanges()
         self.locationManager?.requestAlwaysAuthorization()
     }
+    
+    func configureLocationManagers() {
+        self.locationManagers
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard
+                    let location = location,
+                    let self = self
+                else { return }
+                self.routePath?.add(location.coordinate)
+                self.route?.path = self.routePath
+                
+                let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: self.zoom)
+                self.mapView.animate(to: position)
+            }
+    }
+
     
     private func addMarker(_ position: CLLocationCoordinate2D) {
         let marker = GMSMarker(position: position)
